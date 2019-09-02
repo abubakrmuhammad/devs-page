@@ -1,0 +1,143 @@
+.section {
+  padding: calc(var(--side-gutter) / 1.5) var(--side-gutter);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    color: var(--color-gray);
+    text-transform: uppercase;
+    font-size: 4rem;
+    text-align: center;
+    position: relative;
+
+    &::after {
+      content: '';
+      height: 3px;
+      width: 60%;
+      border-radius: 5px;
+      background-color: var(--color-primary);
+      position: absolute;
+      bottom: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.skills {
+  background-color: var(--color-white);
+
+  &__title {
+    margin-bottom: calc(var(--side-gutter) / 2);
+  }
+
+  &__skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+
+    .skill {
+      text-align: center;
+      line-height: 1.4;
+      color: var(--color-gray-light);
+
+      &__img {
+        width: 40%;
+        fill: var(--color-primary);
+        margin-bottom: 1rem;
+      }
+
+      &__title {
+        font-size: 3rem;
+      }
+
+      &__desc {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+.work {
+  padding-left: calc(var(--side-gutter) / 2);
+  padding-right: calc(var(--side-gutter) / 2);
+
+  &__title {
+    margin-bottom: calc(var(--side-gutter) / 2.5);
+  }
+
+  &__carousel {
+    height: 60rem;
+    width: 100%;
+  }
+}
+
+.contact {
+  background-color: var(--color-white);
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  &__form {
+    font-size: 1.8rem;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      display: block;
+      margin-top: 2rem;
+
+      &.required {
+        &::after {
+          content: '*';
+          display: inline-block;
+          color: var(--color-error);
+          font-size: 0.7em;
+          vertical-align: top;
+          margin-left: 0.2em;
+        }
+      }
+    }
+
+    input,
+    textarea {
+      color: var(--color-gray-light);
+      resize: none;
+      font-family: inherit;
+      font-size: inherit;
+      padding: 1rem 2rem;
+      border: 1px solid var(--color-gray-light);
+      border-radius: var(--radius-medium);
+      transition: outline 0.3s ease-in;
+
+      &:focus {
+        outline: none;
+        border: 2px var(--color-primary) solid;
+      }
+
+      & + .message {
+        display: none;
+      }
+
+      &.invalid {
+        border-color: var(--color-error) !important;
+        position: relative;
+        display: block;
+
+        & + .message {
+          display: block;
+          color: var(--color-error);
+          font-size: 1.4rem;
+          margin-top: 0.3rem;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: 3rem;
+    align-self: center;
+  }
+}

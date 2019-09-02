@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Manjari:100,400,700');
+
+:root {
+  --color-white: #fff;
+  --color-gray-dark: #22303d;
+  --color-gray: #34495e;
+  --color-gray-light: #587ca0;
+  --background-color: #f3f3f3;
+  --color-primary-dark: #7255ff;
+  --color-primary: #9c88ff;
+  --color-primary-light: #c6bbff;
+  --color-error: #d63031;
+  --side-gutter: 10rem;
+  --radius-small: 3px;
+  --radius-medium: 5px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Manjari', sans-serif;
+  font-size: 62.5%;
+  line-height: 1.7;
+  color: var(--color-gray);
+  background-color: var(--background-color);
+  scroll-behavior: smooth;
+}
+
+.btn {
+  font-family: inherit;
+  font-size: 1.6rem;
+  padding: 1.5rem 3rem;
+  border: none;
+  border-radius: var(--radius-medium);
+  color: var(--color-white);
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &--primary {
+    background-image: linear-gradient(
+      to right,
+      var(--color-primary-dark),
+      var(--color-primary),
+      var(--color-primary-dark)
+    );
+    background-size: 200%;
+    background-position: left;
+
+    &:hover {
+      background-position: right;
+    }
+
+    &:focus {
+      outline: 2px var(--color-primary) solid;
+      outline-offset: 3px;
+    }
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+
+  &:disabled {
+    background-image: none;
+    background-color: var(--color-primary-light);
+  }
+}
+
+*::selection {
+  background-color: var(--color-primary-light);
+  color: var(--color-white);
+}

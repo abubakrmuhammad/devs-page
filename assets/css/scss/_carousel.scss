@@ -1,0 +1,112 @@
+.carousel {
+  position: relative;
+
+  &__slides {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    height: 100%;
+    width: calc(100% - (var(--side-gutter) * 2));
+
+    .slide {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+      border-radius: var(--radius-small);
+
+      &__img {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+      }
+
+      &__content {
+        position: relative;
+        background-image: linear-gradient(
+          to bottom,
+          transparent,
+          rgba(#000, 0.7)
+        );
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+        color: var(--color-white);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: var(--side-gutter);
+
+        // transform: translateY(100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease-out;
+      }
+
+      &:hover .slide__content {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      &__link {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.2s;
+
+        &:hover {
+          color: var(--color-primary);
+        }
+      }
+
+      &__title {
+        font-size: 5rem;
+        line-height: 1;
+      }
+
+      &__desc {
+        font-size: 2rem;
+      }
+
+      &--active {
+        z-index: 5;
+
+        & * {
+          z-index: inherit;
+        }
+      }
+    }
+  }
+
+  &__control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: var(--color-primary);
+    height: 6rem;
+    width: 6rem;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &--left {
+      left: 0;
+    }
+
+    &--right {
+      right: 0;
+    }
+
+    &:hover {
+      animation: slideControl 0.4s linear infinite alternate;
+    }
+  }
+}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Sample landing page for developer portfolio website. Built for DevsBeta job task."
+    />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>Devs | We build things</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
+  </head>
+  <body>
+    <header class="header">
+      <div class="navbar">
+        <h2 class="navbar__title">
+          <img src="assets/img/logo.svg" alt="devs logo" class="navbar__logo" />
+          Devs
+        </h2>
+        <nav class="navbar__nav">
+          <a
+            href="#"
+            class="navbar__link"
+            id="link-skills"
+            data-section="skills"
+            >Our Skills</a
+          >
+          <a href="#" class="navbar__link" id="link-work" data-section="work"
+            >Our Work</a
+          >
+          <a
+            href="#"
+            class="navbar__link"
+            id="link-contact"
+            data-section="contact"
+            >Contact Us</a
+          >
+        </nav>
+      </div>
+
+      <div class="hero">
+        <div class="hero__text">
+          <h1 class="hero__title">We're Developers</h1>
+          <h3 class="hero__subtitle">We build things</h3>
+          <button class="hero__btn btn btn--primary">Learn More</button>
+        </div>
+        <img src="assets/img/hero2.svg" alt="web developer" class="hero__img" />
+      </div>
+
+      <svg class="header__down-arrow">
+        <use xlink:href="assets/img/sprite.svg#d-arrow"></use>
+      </svg>
+    </header>
+
+    <main class="main">
+      <section class="section skills">
+        <h2 class="section__title skills__title">Our Skills</h2>
+        <div class="skills__skills">
+          <div class="skill">
+            <svg class="skill__img">
+              <use xlink:href="assets/img/sprite.svg#html"></use>
+            </svg>
+            <h3 class="skill__title">HTML5</h3>
+            <p class="skill__desc">Fully Semantic markups</p>
+          </div>
+          <div class="skill">
+            <svg class="skill__img">
+              <use xlink:href="assets/img/sprite.svg#css"></use>
+            </svg>
+            <h3 class="skill__title">CSS3</h3>
+            <p class="skill__desc">Modern UI designs</p>
+          </div>
+          <div class="skill">
+            <svg class="skill__img">
+              <use xlink:href="assets/img/sprite.svg#js"></use>
+            </svg>
+            <h3 class="skill__title">JavaScript</h3>
+            <p class="skill__desc">ES6+ Modern Javascript</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section work">
+        <h2 class="section__title work__title">Our Work</h2>
+        <div class="work__carousel carousel">
+          <div class="carousel__slides">
+            <div class="slide slide--active" data-slideid="0">
+              <img
+                src="assets/img/trillo.png"
+                alt="trillo"
+                class="slide__img"
+              />
+
+              <div class="slide__content">
+                <a
+                  href="http://trillo-flex.netlify.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="slide__link"
+                  ><h3 class="slide__title">Trillo</h3></a
+                >
+                <p class="slide__desc">All-in-One Booking App UI</p>
+              </div>
+            </div>
+            <div class="slide" data-slideid="1">
+              <img
+                src="assets/img/natours.png"
+                alt="natours"
+                class="slide__img"
+              />
+
+              <div class="slide__content">
+                <a
+                  href="https://natours-css.netlify.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="slide__link"
+                  ><h3 class="slide__title">Natours</h3></a
+                >
+                <p class="slide__desc">
+                  Landing Page for a fictional tour company
+                </p>
+              </div>
+            </div>
+            <div class="slide" data-slideid="2">
+              <img
+                src="assets/img/nexter.png"
+                alt="nexter"
+                class="slide__img"
+              />
+
+              <div class="slide__content">
+                <a
+                  href="https://nexter-grid.netlify.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="slide__link"
+                  ><h3 class="slide__title">Nexter</h3></a
+                >
+                <p class="slide__desc">
+                  Landing Page for a luxury house selling company
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <svg
+            class="carousel__control carousel__control--left"
+            data-slideAction="prev"
+          >
+            <use xlink:href="assets/img/sprite.svg#l-arrow"></use>
+          </svg>
+          <svg
+            class="carousel__control carousel__control--right"
+            data-slideAction="next"
+          >
+            <use xlink:href="assets/img/sprite.svg#r-arrow"></use>
+          </svg>
+        </div>
+      </section>
+      <section class="section contact">
+        <h2 class="section__title contact__title">Contact us</h2>
+
+        <form class="contact__form" autocomplete="off" novalidate>
+          <label class="required" for="name">Your Name</label>
+          <input type="text" name="name" id="name" />
+          <span class="message">Name should be atleast 3 characters</span>
+
+          <label class="required" for="email">Your Email</label>
+          <input type="email" name="email" id="email" />
+          <span class="message">You email is not valid</span>
+
+          <label class="required" for="message">Your Message</label>
+          <textarea name="message" id="message" cols="30" rows="10"></textarea>
+          <span class="message">Message should be atleast 10 characters</span>
+
+          <button type="submit" class="contact__btn btn btn--primary">
+            Submit
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <h2 class="footer__title">
+        <img src="assets/img/logo.svg" alt="devs logo" class="footer__logo" />
+        Devs
+      </h2>
+
+      <div class="footer__content">
+        <nav class="footer__nav">
+          <a href="#" class="footer__link" data-section="skills">Our Skills</a>
+          <a href="#" class="footer__link" data-section="work">Our Work</a>
+          <a href="#" class="footer__link" data-section="contact">Contact Us</a>
+        </nav>
+
+        <p class="footer__copy">
+          Built by <mark>Abubakr Muhammad</mark> for a job application in
+          <mark>DevsBeta</mark>. Copyright © by <mark>Abubakr Muhammad</mark>.
+          All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
