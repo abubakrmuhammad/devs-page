@@ -37,6 +37,12 @@
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
 
+    @media screen and (max-width: $media-sm) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      grid-row-gap: 2rem;
+    }
+
     .skill {
       text-align: center;
       line-height: 1.4;
@@ -46,6 +52,11 @@
         width: 40%;
         fill: var(--color-primary);
         margin-bottom: 1rem;
+
+        @media screen and (max-width: $media-sm) {
+          width: 33%;
+          margin-bottom: 0rem;
+        }
       }
 
       &__title {
@@ -63,13 +74,22 @@
   padding-left: calc(var(--side-gutter) / 2);
   padding-right: calc(var(--side-gutter) / 2);
 
+  @media screen and (max-width: $media-sm) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   &__title {
-    margin-bottom: calc(var(--side-gutter) / 2.5);
+    margin-bottom: calc(var(--side-gutter) / 2);
   }
 
   &__carousel {
-    height: 60rem;
+    height: calc(100vh - 11rem - (var(--side-gutter) * 2) - 4rem);
     width: 100%;
+
+    @media screen and (max-width: $media-sm) {
+      height: 50vw;
+    }
   }
 }
 
@@ -82,8 +102,13 @@
 
   &__form {
     font-size: 1.8rem;
+    width: 56rem;
     display: flex;
     flex-direction: column;
+
+    @media screen and (max-width: $media-sm) {
+      width: 32rem;
+    }
 
     label {
       display: block;

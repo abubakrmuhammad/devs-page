@@ -21,6 +21,11 @@
           <img src="assets/img/logo.svg" alt="devs logo" class="navbar__logo" />
           Devs
         </h2>
+        <button class="navbar__menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <nav class="navbar__nav">
           <a
             href="#"
@@ -205,6 +210,13 @@
         </p>
       </div>
     </footer>
+
+    <script>
+      $('.navbar__menu-btn').click(function() {
+        $('.navbar__nav').slideToggle();
+        $('.navbar__menu-btn').toggleClass('crossed');
+      });
+    </script>
 
     <script src="assets/js/main.js"></script>
   </body>

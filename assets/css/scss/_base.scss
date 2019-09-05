@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Manjari:100,400,700');
 
+$media-xs: 123px;
+$media-sm: 576px;
+$media-md: 768px;
+$media-lg: 992px;
+
 :root {
   --color-white: #fff;
   --color-gray-dark: #22303d;
@@ -13,6 +18,10 @@
   --side-gutter: 10rem;
   --radius-small: 3px;
   --radius-medium: 5px;
+
+  @media screen and (max-width: $media-md) {
+    --side-gutter: 5rem;
+  }
 }
 
 *,
@@ -31,6 +40,10 @@ body {
   color: var(--color-gray);
   background-color: var(--background-color);
   scroll-behavior: smooth;
+
+  @media screen and (max-width: $media-md) {
+    font-size: 55%;
+  }
 }
 
 .btn {

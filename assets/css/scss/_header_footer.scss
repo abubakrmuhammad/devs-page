@@ -14,6 +14,16 @@
     z-index: 10;
     transition: all 0.3s;
 
+    @media screen and (max-width: $media-sm) {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    @media screen and (max-width: $media-sm) {
+      flex-wrap: wrap;
+      height: auto;
+    }
+
     &.fixed {
       position: fixed;
       top: 0;
@@ -29,13 +39,78 @@
       }
     }
 
+    &__menu-btn {
+      display: none;
+      margin-left: auto;
+      position: relative;
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+      outline: none;
+      height: 2.8rem;
+      width: 4rem;
+
+      span {
+        display: block;
+        background-color: var(--color-primary);
+        border-radius: var(--radius-medium);
+        width: 100%;
+        height: 3px;
+        position: absolute;
+        left: 0;
+        transition: all 0.2s;
+
+        &:nth-of-type(1) {
+          top: 0;
+        }
+
+        &:nth-of-type(2) {
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        &:nth-of-type(3) {
+          bottom: 0;
+        }
+      }
+
+      &.crossed {
+        span {
+          &:nth-of-type(1) {
+            top: 50%;
+            transform: translateY(-50%);
+            transform: rotate(45deg);
+          }
+
+          &:nth-of-type(2) {
+            opacity: 0;
+          }
+
+          &:nth-of-type(3) {
+            top: 50%;
+            transform: translateY(-50%);
+            transform: rotate(-45deg);
+          }
+        }
+      }
+
+      @media screen and (max-width: $media-sm) {
+        display: block;
+      }
+    }
+
     &__title {
       display: flex;
       align-items: center;
+      justify-content: center;
       line-height: 1;
       color: var(--color-primary);
       font-size: 2.8rem;
       cursor: pointer;
+
+      @media screen and (max-width: $media-sm) {
+        padding-top: 0.5rem;
+      }
     }
 
     &__logo {
@@ -44,10 +119,29 @@
       margin-top: -1rem;
     }
 
+    &__nav {
+      display: flex;
+
+      @media screen and (max-width: $media-sm) {
+        flex: 0 0 100%;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        transform-origin: top;
+        margin-top: 2rem;
+      }
+    }
+
     &__link {
+      display: inline-block;
       font-size: 1.7rem;
       position: relative;
       transition: color 0.1s ease;
+
+      @media screen and(max-width: $media-sm) {
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
 
       &:not(:last-child) {
         margin-right: 1.6rem;
@@ -99,6 +193,11 @@
     align-items: center;
     justify-content: space-between;
 
+    @media screen and (max-width: $media-sm) {
+      flex-direction: column;
+      justify-content: center;
+    }
+
     &__title {
       font-size: 5.4rem;
       line-height: 1;
@@ -115,6 +214,11 @@
     &__img {
       width: 50%;
       height: auto;
+
+      @media screen and (max-width: $media-sm) {
+        width: 70%;
+        margin-top: 6.5rem;
+      }
     }
   }
 
@@ -138,6 +242,10 @@
   background-color: var(--color-primary-light);
   padding: calc(var(--side-gutter) / 1.5) calc(var(--side-gutter) * 2);
 
+  @media screen and (max-width: $media-sm) {
+    padding: 4rem 3rem;
+  }
+
   &__title {
     display: flex;
     justify-content: center;
@@ -158,6 +266,11 @@
   &__content {
     display: flex;
     justify-content: center;
+
+    @media screen and (max-width: $media-sm) {
+      flex-wrap: wrap;
+      align-items: center;
+    }
   }
 
   &__link {
@@ -186,6 +299,13 @@
     flex: 0 0 40%;
     margin-left: auto;
     font-size: 1.4rem;
+
+    @media screen and (max-width: $media-sm) {
+      flex: 0 0 100%;
+      margin-top: 2rem;
+      margin-left: 0;
+      text-align: center;
+    }
 
     mark {
       all: unset;
